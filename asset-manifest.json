@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/PROJETO_INOVA/static/css/main.0555f5aa.css",
+    "main.js": "/PROJETO_INOVA/static/js/main.0b9df64d.js",
+    "static/media/soft-plaster-texture.jpg": "/PROJETO_INOVA/static/media/soft-plaster-texture.c538c496d9fa849ca653.jpg",
+    "static/media/imagem-meio-ambiente.jpg": "/PROJETO_INOVA/static/media/imagem-meio-ambiente.ce72302c7075e104651e.jpg",
+    "static/media/ge.png": "/PROJETO_INOVA/static/media/ge.6b2294e84189bdc6832c.png",
+    "static/media/mzz.png": "/PROJETO_INOVA/static/media/mzz.2b9460c9273fd0938287.png",
+    "static/media/hgg.png": "/PROJETO_INOVA/static/media/hgg.a70a1c26163e62c4e87a.png",
+    "static/media/imagem-meio-ambiente2.jpg": "/PROJETO_INOVA/static/media/imagem-meio-ambiente2.9e1c055f954a677ddf1a.jpg",
+    "static/media/imagem-meio-ambiente3.jpg": "/PROJETO_INOVA/static/media/imagem-meio-ambiente3.9614bdccfd7d5bdcee81.jpg",
+    "static/media/Isa.jpeg": "/PROJETO_INOVA/static/media/Isa.7ef7d7251fa2169ff89c.jpeg",
+    "static/media/func.webp": "/PROJETO_INOVA/static/media/func.18556c05dd5b1babfedc.webp",
+    "static/media/header.png": "/PROJETO_INOVA/static/media/header.3bfd491f12ced741b983.png",
+    "static/media/instagram.jpeg": "/PROJETO_INOVA/static/media/instagram.e719d8b29f452a16302d.jpeg",
+    "static/media/caicaras_reciclagem-1024x519.webp": "/PROJETO_INOVA/static/media/caicaras_reciclagem-1024x519.470cd5b86701997cf994.webp",
+    "static/media/imagem-meio-ambiente5.jpg": "/PROJETO_INOVA/static/media/imagem-meio-ambiente5.3de4f127c06684bfad2f.jpg",
+    "static/media/github-6980894_960_720.webp": "/PROJETO_INOVA/static/media/github-6980894_960_720.010a2fd15fdc36a3ffbf.webp",
+    "static/media/tres-pessoas-carregando-caixas-com-materiais-para-reciclagem.webp": "/PROJETO_INOVA/static/media/tres-pessoas-carregando-caixas-com-materiais-para-reciclagem.74c6a35df89dfcc0151e.webp",
+    "static/media/linkedin.webp": "/PROJETO_INOVA/static/media/linkedin.8517aaf4b65db3ab1923.webp",
+    "index.html": "/PROJETO_INOVA/index.html",
+    "main.0555f5aa.css.map": "/PROJETO_INOVA/static/css/main.0555f5aa.css.map",
+    "main.0b9df64d.js.map": "/PROJETO_INOVA/static/js/main.0b9df64d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0555f5aa.css",
+    "static/js/main.0b9df64d.js"
+  ]
+}
