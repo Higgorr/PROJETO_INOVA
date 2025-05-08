@@ -1,0 +1,235 @@
+/* Estilos globais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;
+    
+    color: #333;
+    line-height: 1.6;
+    background-image: url(../assets/soft-plaster-texture.jpg);
+     
+}
+
+
+/* Cabeçalho */
+header {
+    background: #216666;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.692);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #A7C957;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    background: #A7C957;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Seções */
+section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #FFF;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #2C6E49;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Equipe */
+.membro {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    max-width: 250px;
+}
+
+.membro img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.membro h3 {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+    color: #2C6E49;
+}
+
+.membro p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Formulário de Contato */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    background: #2C6E49;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #A7C957;
+}
+header img{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+
+}
+footer {
+    background: #216666; 
+    color: #F0F4EF; 
+    text-align: center;
+    padding: 20px 10px;
+    border-top: 3px solid #A7C957;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #F0F4EF;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    color:white; /* Destaque ao passar o mouse */
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 24px;
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+#sobreimgs{
+    box-shadow: 0 0 0 3px black;
+}
+#bannerimg{
+    height: 250px; width: 100%;
+}
+h3{
+    color: #2C6E49;
+}
+#botaovoltar{
+
+    display: inline-block;
+    background: #64831b;
+    color: white;
+    padding: 20px 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+
+}
+#botaovoltar:hover{
+
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    
+}

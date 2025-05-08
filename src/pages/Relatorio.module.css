@@ -1,0 +1,107 @@
+.pageContainer {
+    background-image: url('../assets/soft-plaster-texture.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    animation: moveBackground 20s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .botaoVoltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+    background: #64831b;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 10;
+  }
+  
+  .botaoVoltar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contentContainer {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    margin: 2rem;
+  }
+  
+  .title {
+    color: #216666;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  .description {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .downloadButton {
+    display: inline-block;
+    background: #216666;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .downloadButton:hover {
+    background: #1a4f4f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes moveBackground {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 25% 25%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .contentContainer {
+      padding: 1.5rem;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+    
+    .botaoVoltar {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    
+    .downloadButton {
+      padding: 12px 25px;
+    }
+  }
