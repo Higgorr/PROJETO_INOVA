@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PROJETO_INOVA/static/css/main.0555f5aa.css",
-    "main.js": "/PROJETO_INOVA/static/js/main.0b9df64d.js",
+    "main.css": "/PROJETO_INOVA/static/css/main.2fb86395.css",
+    "main.js": "/PROJETO_INOVA/static/js/main.da1a32cf.js",
     "static/media/soft-plaster-texture.jpg": "/PROJETO_INOVA/static/media/soft-plaster-texture.c538c496d9fa849ca653.jpg",
     "static/media/imagem-meio-ambiente.jpg": "/PROJETO_INOVA/static/media/imagem-meio-ambiente.ce72302c7075e104651e.jpg",
     "static/media/ge.png": "/PROJETO_INOVA/static/media/ge.6b2294e84189bdc6832c.png",
@@ -19,11 +19,11 @@
     "static/media/tres-pessoas-carregando-caixas-com-materiais-para-reciclagem.webp": "/PROJETO_INOVA/static/media/tres-pessoas-carregando-caixas-com-materiais-para-reciclagem.74c6a35df89dfcc0151e.webp",
     "static/media/linkedin.webp": "/PROJETO_INOVA/static/media/linkedin.8517aaf4b65db3ab1923.webp",
     "index.html": "/PROJETO_INOVA/index.html",
-    "main.0555f5aa.css.map": "/PROJETO_INOVA/static/css/main.0555f5aa.css.map",
-    "main.0b9df64d.js.map": "/PROJETO_INOVA/static/js/main.0b9df64d.js.map"
+    "main.2fb86395.css.map": "/PROJETO_INOVA/static/css/main.2fb86395.css.map",
+    "main.da1a32cf.js.map": "/PROJETO_INOVA/static/js/main.da1a32cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.0555f5aa.css",
-    "static/js/main.0b9df64d.js"
+    "static/css/main.2fb86395.css",
+    "static/js/main.da1a32cf.js"
   ]
 }
