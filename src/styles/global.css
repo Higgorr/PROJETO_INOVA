@@ -1,15 +1,15 @@
 /* Estilos globais */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F4F4F4;
-    
-    color: #333;
-    line-height: 1.6;
-    background-image: url(../assets/soft-plaster-texture.jpg);
-     
+    font-family: Arial, sans-serif;
+  background-image: url('../assets/soft-plaster-texture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  animation: moveBackground 20s linear infinite;
 }
+
+     
+
 
 
 /* Cabeçalho */
@@ -232,4 +232,15 @@ h3{
     transform: scale(1.05);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     
+}
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 25% 25%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }

@@ -1,94 +1,176 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+/* Variáveis de cores */
+:root {
+  --primary: #2C6E49;
+  --primary-light: #4c9c6d;
+  --primary-dark: #1e4e36;
+  --secondary: #216666;
+  --accent: #A7C957;
+  --background: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #6c757d;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Container principal */
+.homeContainer {
+  background: 
+    linear-gradient(135deg, rgba(44, 110, 73, 0.15) 0%, rgba(33, 102, 102, 0.15) 100%),
+    /* Animação de partículas */
+    radial-gradient(circle at 10% 20%, rgba(167, 201, 87, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 30%, rgba(44, 110, 73, 0.1) 0%, transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(33, 102, 102, 0.1) 0%, transparent 20%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Animação do wallpaper */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .botaoVoltar {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    margin-bottom: 2rem;
-    background-color: #2c3e50;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    font-weight: 500;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  .botaoVoltar:hover {
-    background-color: #1a252f;
-    transform: translateY(-2px);
+  100% {
+    background-position: 0% 50%;
   }
-  
-  .contentSection {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .title {
-    color: #216666;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-  }
-  
-  .funcionalidadesList {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem 0;
-  }
-  
-  .funcionalidadeItem {
-    background-color: white;
+}
+
+/* Botão voltar */
+.backButton {
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.backButton:hover {
+  background-color: rgba(44, 110, 73, 0.1);
+  transform: translateX(-4px);
+}
+
+/* Cabeçalho */
+.headerPaper {
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 12px;
+}
+
+.mainTitle {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subTitle {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Grid de conteúdo */
+.contentGrid {
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+/* Lista de funcionalidades */
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.featureCard {
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  transition: var(--transition);
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.featureIcon {
+  min-width: 40px;
+}
+
+.featureTitle {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.featureDesc {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Imagem */
+.imagePaper {
+  height: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.featureImage {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+}
+
+.featureImage:hover {
+  transform: scale(1.02);
+}
+
+.imageCaption {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pageContainer {
     padding: 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    display: flex;
+  }
+  
+  .headerPaper {
+    padding: 2rem 1rem;
+  }
+  
+  .mainTitle {
+    font-size: 1.8rem;
+  }
+  
+  .subTitle {
+    font-size: 1.1rem;
+  }
+  
+  .contentGrid {
     flex-direction: column;
   }
-  
-  .funcionalidadeTitle {
-    font-weight: bold;
-    color: #216666;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-  }
-  
-  .funcionalidadeDesc {
-    color: #495057;
-    line-height: 1.6;
-  }
-  
-  .imageContainer {
-    text-align: center;
-    margin-top: 2rem;
-  }
-  
-  .funcImage {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding: 1rem;
-    }
-    
-    .contentSection {
-      padding: 1.5rem;
-    }
-    
-    .title {
-      font-size: 1.5rem;
-    }
-    
-    .funcionalidadeItem {
-      padding: 1rem;
-    }
-  }
+}
+.backButton {
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.backButton:hover {
+  background-color: rgba(44, 110, 73, 0.1);
+}

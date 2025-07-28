@@ -86,9 +86,9 @@ export const Equipe = () => {
           </div>
           <div className={styles.membroInfo}>
             <h3>Higgor</h3>
-            <p className={styles.membroFuncao}>Desenvolvedor Front-end</p>
+            <p className={styles.membroFuncao}>Desenvolvedor Web</p>
             <p className={styles.membroDescricao}>
-              Responsável pela criação do website e vídeo pitch, transformando conceitos em experiências digitais.
+              Responsável pela criação do website, transformando conceitos em experiências digitais.
             </p>
           </div>
         </div>

@@ -1,107 +1,138 @@
-.pageContainer {
-    background-image: url('../assets/soft-plaster-texture.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    animation: moveBackground 20s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Relatorio.module.css */
+
+.RelatorioContainer {
+  background: 
+    linear-gradient(135deg, rgba(44, 110, 73, 0.15) 0%, rgba(33, 102, 102, 0.15) 100%),
+    /* Animação de partículas */
+    radial-gradient(circle at 10% 20%, rgba(167, 201, 87, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 30%, rgba(44, 110, 73, 0.1) 0%, transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(33, 102, 102, 0.1) 0%, transparent 20%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Animação do wallpaper */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .botaoVoltar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: inline-block;
-    background: #64831b;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    z-index: 10;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  .botaoVoltar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.contentContainer {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 3rem;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.contentContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2C6E49, #216666);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reportIcon {
+  font-size: 2.5rem !important;
+  color: #2C6E49;
+  background: rgba(44, 110, 73, 0.1);
+  padding: 0.8rem;
+  border-radius: 12px;
+}
+
+.title {
+  font-weight: 700 !important;
+  color: #2C6E49 !important;
+  font-size: 2.2rem !important;
+}
+
+.description {
+  color: #555 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.8 !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.downloadButton {
+  background: linear-gradient(135deg, #2C6E49 0%, #216666 100%) !important;
+  color: white !important;
+  padding: 12px 28px !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 4px 12px rgba(44, 110, 73, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.downloadButton:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 16px rgba(44, 110, 73, 0.4) !important;
+}
+
+.backButton {
+  color: #2C6E49 !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.backButton:hover {
+  background-color: rgba(44, 110, 73, 0.1) !important;
+  transform: translateX(-4px) !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1.5rem;
   }
   
   .contentContainer {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    max-width: 600px;
-    width: 90%;
-    margin: 2rem;
+    padding: 2rem;
   }
   
   .title {
-    color: #216666;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+    font-size: 1.8rem !important;
   }
   
   .description {
-    color: #333;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    font-size: 1rem !important;
   }
   
   .downloadButton {
-    display: inline-block;
-    background: #216666;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px !important;
+    font-size: 1rem !important;
   }
-  
-  .downloadButton:hover {
-    background: #1a4f4f;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  @keyframes moveBackground {
-    0% {
-      background-position: 0% 0%;
-    }
-    50% {
-      background-position: 25% 25%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .contentContainer {
-      padding: 1.5rem;
-    }
-    
-    .title {
-      font-size: 1.5rem;
-    }
-    
-    .botaoVoltar {
-      padding: 10px 20px;
-      font-size: 14px;
-    }
-    
-    .downloadButton {
-      padding: 12px 25px;
-    }
-  }
+}

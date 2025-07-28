@@ -1,0 +1,150 @@
+/* Variáveis de cores */
+:root {
+  --primary: #2C6E49;
+  --primary-light: #4c9c6d;
+  --primary-dark: #1e4e36;
+  --secondary: #216666;
+  --accent: #A7C957;
+  --background: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #6c757d;
+  --border: #e0e0e0;
+  --error: #dc3545;
+  --success: #28a745;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+/* Container principal */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background);
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card de login */
+.loginCard {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 3rem;
+  width: 100%;
+  max-width: 480px;
+  border-top: 4px solid var(--accent);
+  transition: var(--transition);
+}
+
+.loginCard:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Cabeçalho */
+.loginHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.loginIcon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loginTitle {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.loginSubtitle {
+  color: var(--text-secondary);
+}
+
+/* Formulário */
+.loginForm {
+  margin-top: 2rem;
+}
+
+.inputIcon {
+  color: var(--text-secondary);
+  margin-right: 8px;
+}
+
+/* Botão */
+.loginButton {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 12px;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.loginButton:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 110, 73, 0.3);
+}
+
+.loginButton:disabled {
+  background: var(--text-secondary);
+}
+
+/* Links */
+.loginLinks {
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.linkIcon {
+  font-size: 0.9rem;
+}
+
+/* Mensagem de erro */
+.errorMessage {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .loginContainer {
+    padding: 1rem;
+  }
+  
+  .loginCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .loginTitle {
+    font-size: 1.8rem;
+  }
+}

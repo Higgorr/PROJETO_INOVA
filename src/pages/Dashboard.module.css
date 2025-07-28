@@ -1,0 +1,317 @@
+/* Dashboard.module.css */
+
+:root {
+  --primary: #2C6E49;
+  --primary-light: #4c9c6d;
+  --primary-dark: #1e4e36;
+  --secondary: #216666;
+  --accent: #A7C957;
+  --background: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #6c757d;
+  --border: #e0e0e0;
+  --success: #28a745;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+.homeContainer {
+  background: 
+    linear-gradient(135deg, rgba(44, 110, 73, 0.15) 0%, rgba(33, 102, 102, 0.15) 100%),
+    /* Animação de partículas */
+    radial-gradient(circle at 10% 20%, rgba(167, 201, 87, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 30%, rgba(44, 110, 73, 0.1) 0%, transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(33, 102, 102, 0.1) 0%, transparent 20%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Animação do wallpaper */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.appTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--accent));
+}
+
+.cardTitle {
+  color: var(--primary);
+  margin-bottom: 1.75rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kpiContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kpiValue {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kpiLabel {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.trendIndicator {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: rgba(40, 167, 69, 0.15);
+  color: var(--success);
+}
+
+.trendIndicator.down {
+  background-color: rgba(220, 53, 69, 0.15);
+  color: #dc3545;
+}
+
+.chartContainer {
+  height: 250px;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.chartBar {
+  flex: 1;
+  background: linear-gradient(to top, var(--primary), var(--accent));
+  border-radius: 6px 6px 0 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.chartBar:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.chartBarLabel {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.exportButton {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(44, 110, 73, 0.3);
+}
+
+.exportButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(44, 110, 73, 0.4);
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+}
+
+.materialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 1.5rem;
+}
+
+.materialCard {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--accent);
+  transition: var(--transition);
+}
+
+.materialCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.materialName {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.materialInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.infoValue {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.infoLabel {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Adaptação para mobile */
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 1.25rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .kpiValue {
+    font-size: 1.75rem;
+  }
+  
+  .chartContainer {
+    height: 180px;
+  }
+}
+.backButton {
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.backButton:hover {
+  background-color: rgba(44, 110, 73, 0.1);
+}

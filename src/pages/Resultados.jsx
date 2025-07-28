@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom';
 import styles from './Resultados.module.css';
 import impactoImage from '../assets/caicaras_reciclagem-1024x519.webp';
+import {Button,} from '@mui/material'
+import { ArrowBack } from '@mui/icons-material'; // Importando o ícone de voltar
 
 export const Resultados = () => {
   return (
     <div className={styles.container}>
-      <Link to="/PROJETO_INOVA" className={styles.botaoVoltar}>
-        ← Voltar para Home
-      </Link>
+     <Button
+          component={Link}
+          to="/"
+          startIcon={<ArrowBack />}
+          className={styles.backButton}
+        >
+          Voltar
+        </Button>
 
       <section className={styles.contentSection}>
         <h2 className={styles.title}>Resultados</h2>

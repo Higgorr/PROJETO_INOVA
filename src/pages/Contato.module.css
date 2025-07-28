@@ -1,129 +1,243 @@
+:root {
+  --primary: #2C6E49;
+  --primary-light: #4c9c6d;
+  --primary-dark: #1e4e36;
+  --secondary: #216666;
+  --accent: #A7C957;
+  --background: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #6c757d;
+  --error: #d32f2f;
+  --success: #2e7d32;
+  --warning: #ff9800;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Container principal */
 .pageContainer {
-    font-family: Arial, sans-serif;
-    background: url('../assets/soft-plaster-texture.jpg') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: moveBackground 20s linear infinite;
-  }
-  
-  .botaoVoltar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: inline-block;
-    background: #64831b;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    z-index: 10;
-  }
-  
-  .botaoVoltar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--background) 0%, #e6f3ed 100%);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botão voltar */
+.backButton {
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.backButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(44, 110, 73, 0.1);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.backButton:hover::before {
+  width: 100%;
+}
+
+.backButton:hover {
+  transform: translateX(-4px);
+}
+
+/* Container do formulário */
+.container {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--card-bg);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--accent));
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+.pageTitle {
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.pageTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  border-radius: 2px;
+}
+
+/* Campos do formulário */
+.contactForm .MuiFormControl-root {
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.contactForm .MuiOutlinedInput-root {
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.contactForm .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(44, 110, 73, 0.2);
+}
+
+.contactForm .MuiInputLabel-root.Mui-focused {
+  color: var(--primary);
+}
+
+.contactForm .MuiSelect-select {
+  padding: 12px 14px;
+}
+
+/* Botão de enviar */
+.submitButton {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 14px 28px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(44, 110, 73, 0.3);
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+  transition: all 0.4s ease;
+}
+
+.submitButton:hover::before {
+  left: 0;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 110, 73, 0.4);
+}
+
+.submitButton span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Snackbar (notificação) */
+.MuiAlert-filledSuccess {
+  background-color: var(--success) !important;
+}
+
+.MuiAlert-filledError {
+  background-color: var(--error) !important;
+}
+
+/* Efeitos de loading */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.loadingPulse {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1.5rem;
   }
   
   .container {
-    background: white;
-    padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 100%;
-    max-width: 500px;
-    margin: 40px auto;
+    padding: 2rem 1.5rem;
   }
   
-  h2 {
-    text-align: center;
-    color: #216666;
-    margin-bottom: 25px;
-  }
-  
-  .contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .formGroup label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  .formInput,
-  .formSelect,
-  .formTextarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-  }
-  
-  .formInput:focus,
-  .formSelect:focus,
-  .formTextarea:focus {
-    border-color: #216666;
-    outline: none;
-  }
-  
-  .formTextarea {
-    resize: vertical;
-    min-height: 120px;
+  .pageTitle {
+    font-size: 2rem;
   }
   
   .submitButton {
+    width: 100%;
     padding: 12px;
-    background: #216666;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 1rem;
   }
   
-  .submitButton:hover {
-    background: #1a4f4f;
+  .pageTitle {
+    font-size: 1.8rem;
   }
-  
-  @keyframes moveBackground {
-    0% {
-      background-position: 0% 0%;
-    }
-    50% {
-      background-position: 25% 25%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .container {
-      width: 90%;
-      padding: 20px;
-    }
-    
-    .botaoVoltar {
-      padding: 10px 20px;
-      font-size: 14px;
-    }
-  }
+}
+.backButton {
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.backButton:hover {
+  background-color: rgba(44, 110, 73, 0.1);
+}

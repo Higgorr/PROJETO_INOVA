@@ -1,0 +1,139 @@
+/* Variáveis de cores */
+:root {
+  --primary: #2C6E49;
+  --primary-light: #4c9c6d;
+  --primary-dark: #1e4e36;
+  --secondary: #216666;
+  --accent: #A7C957;
+  --background: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #6c757d;
+  --border: #e0e0e0;
+  --error: #dc3545;
+  --success: #28a745;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+/* Container principal */
+.signupContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background);
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card de cadastro */
+.signupCard {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 3rem;
+  width: 100%;
+  max-width: 480px;
+  border-top: 4px solid var(--accent);
+  transition: var(--transition);
+}
+
+.signupCard:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Cabeçalho */
+.signupHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.signupIcon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.signupTitle {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.signupSubtitle {
+  color: var(--text-secondary);
+}
+
+/* Formulário */
+.signupForm {
+  margin-top: 2rem;
+}
+
+.inputIcon {
+  color: var(--text-secondary);
+  margin-right: 8px;
+}
+
+/* Botão */
+.signupButton {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 12px;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.signupButton:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 110, 73, 0.3);
+}
+
+.signupButton:disabled {
+  background: var(--text-secondary);
+}
+
+/* Link para login */
+.loginLink {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Mensagem de erro */
+.errorMessage {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .signupContainer {
+    padding: 1rem;
+  }
+  
+  .signupCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .signupTitle {
+    font-size: 1.8rem;
+  }
+}
