@@ -1,7 +1,7 @@
 {
   "name": "projetoinovahiggor",
   "version": "0.1.0",
-  "homepage": "https://Higgorr.github.io/PROJETO_INOVA",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
