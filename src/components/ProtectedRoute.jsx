@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../firebase";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import { auth, db } from "../firebase"; // Importe também o 'db'
 import { Navigate, useLocation } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
@@ -9,7 +10,21 @@ const ProtectedRoute = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // Verifica se o documento do usuário existe
+        const userDocRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(userDocRef);
+        
+        if (!docSnap.exists()) {
+          // Cria o documento se não existir
+          await setDoc(userDocRef, {
+            email: user.email,
+            criadoEm: new Date()
+          });
+          console.log("Novo usuário registrado no Firestore:", user.uid);
+        }
+      }
       setUserLogado(user);
       setLoading(false);
     });
@@ -18,11 +33,10 @@ const ProtectedRoute = ({ children }) => {
   }, []);
 
   if (loading) {
-    return <div className="loading-spinner">Carregando...</div>; // Adicione um estilo CSS para isso
+    return <div className="loading-spinner">Carregando...</div>;
   }
 
   if (!userLogado) {
-    // Guarda a rota que o usuário tentou acessar para redirecionar após o login
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 

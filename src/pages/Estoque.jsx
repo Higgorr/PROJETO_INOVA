@@ -11,7 +11,7 @@ import {
   collection, addDoc, doc, deleteDoc, updateDoc,
   onSnapshot, query, orderBy 
 } from 'firebase/firestore';
-import { db } from '../firebase';
+import { db, auth } from '../firebase'; // Importe o auth também
 import styles from './Estoque.module.css';
 import '@fontsource/inter';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -33,12 +33,15 @@ export function Estoque() {
     severity: "success"
   });
   const [loading, setLoading] = useState(false);
+  const user = auth.currentUser; // Obtenha o usuário atual
 
   // Buscar itens do Firestore (em tempo real) com ordenação por data
   useEffect(() => {
+    if (!user) return; // Só carrega se usuário estiver logado
+    
     setLoading(true);
     const q = query(
-      collection(db, "estoque"), 
+      collection(db, "users", user.uid, "estoque"), // Caminho corrigido
       orderBy("dataEntrada", "desc")
     );
     
@@ -60,12 +63,13 @@ export function Estoque() {
     });
     
     return () => unsubscribe();
-  }, []);
-
+  }, [user]); // Adicione user como dependência
   // Calcular valor total quando peso ou preço mudam
   useEffect(() => {
     setValorTotal(formData.peso * formData.precoPorKg);
   }, [formData.peso, formData.precoPorKg]);
+
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,9 +78,20 @@ export function Estoque() {
       [name]: name === "peso" || name === "precoPorKg" ? parseFloat(value) || 0 : value
     }));
   };
-
+const handleEdit = (item) => {
+  setFormData({
+    material: item.material,
+    peso: item.peso,
+    precoPorKg: item.precoPorKg,
+    dataEntrada: item.dataEntrada
+  });
+  setEditId(item.id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user) return; // Proteção adicional
+    
     setLoading(true);
     try {
       const itemData = {
@@ -85,7 +100,7 @@ export function Estoque() {
       };
 
       if (editId) {
-        await updateDoc(doc(db, "estoque", editId), itemData);
+        await updateDoc(doc(db, "users", user.uid, "estoque", editId), itemData);
         setSnackbar({
           open: true,
           message: "Material atualizado com sucesso!",
@@ -93,7 +108,7 @@ export function Estoque() {
         });
         setEditId(null);
       } else {
-        await addDoc(collection(db, "estoque"), itemData);
+        await addDoc(collection(db, "users", user.uid, "estoque"), itemData);
         setSnackbar({
           open: true,
           message: "Material adicionado com sucesso!",
@@ -118,20 +133,11 @@ export function Estoque() {
     }
   };
 
-  const handleEdit = (item) => {
-    setFormData({
-      material: item.material,
-      peso: item.peso,
-      precoPorKg: item.precoPorKg,
-      dataEntrada: item.dataEntrada
-    });
-    setEditId(item.id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const handleDelete = async (id) => {
+    if (!user) return;
+    
     try {
-      await deleteDoc(doc(db, "estoque", id));
+      await deleteDoc(doc(db, "users", user.uid, "estoque", id));
       setSnackbar({
         open: true,
         message: "Material removido com sucesso!",

@@ -2,15 +2,22 @@ import React from 'react';
 import { Box, Grid, Button, Paper, Typography, CircularProgress } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { collection } from 'firebase/firestore';
-import { db } from '../firebase';
+import { collection, query, where } from 'firebase/firestore';
+import { db, auth } from '../firebase';
 import styles from './Dashboard.module.css';
 import * as XLSX from 'xlsx';
 import '@fontsource/inter';
-import { ArrowBack } from '@mui/icons-material'; // Importando o ícone de voltar
+import { ArrowBack } from '@mui/icons-material';
 
 export default function Dashboard() {
-  const [items, loading] = useCollectionData(collection(db, "estoque"));
+  const user = auth.currentUser;
+  
+  // Consulta modificada para acessar o estoque do usuário logado
+  const [items, loading] = useCollectionData(
+    user ? query(
+      collection(db, "users", user.uid, "estoque")
+    ) : null
+  );
 
   // Resumo Empresarial
   const totalKg = items?.reduce((sum, item) => sum + item.peso, 0) || 0;
@@ -32,6 +39,7 @@ export default function Dashboard() {
     XLSX.writeFile(workbook, "estoque_reciclagem.xlsx");
   };
 
+  // Restante do código permanece igual...
   return (
     <Box className={styles.dashboardContainer}>
       <Box className={styles.header}>

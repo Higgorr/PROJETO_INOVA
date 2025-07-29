@@ -22,17 +22,26 @@ const Signup = () => {
     setError(null);
 
     try {
+      // 1. Cria o usuário no Firebase Auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
       const user = userCredential.user;
 
-      // Salva dados no Firestore
-      await setDoc(doc(db, "usuarios", user.uid), {
+      // 2. Cria o documento do usuário na coleção "users" (com UID como ID)
+      await setDoc(doc(db, "users", user.uid), {
         nome: nome,
         email: email,
-        dataCadastro: new Date().toISOString()
+        criadoEm: new Date() // Usando timestamp nativo do Firestore
       });
 
-      navigate('/login', { state: { from: '/', message: 'Cadastro realizado com sucesso!' } });
+      // 3. Redireciona com mensagem de sucesso
+      navigate('/login', { 
+        state: { 
+          from: '/', 
+          message: 'Cadastro realizado com sucesso!',
+          email: email // Opcional: pré-preencher e-mail no login
+        } 
+      });
+
     } catch (error) {
       console.error("Erro detalhado:", error);
       setError(getErrorMessage(error.code));
@@ -40,7 +49,7 @@ const Signup = () => {
     }
   };
 
-  // Função para mensagens de erro mais amigáveis
+  // Mensagens de erro (mantido igual)
   const getErrorMessage = (code) => {
     switch(code) {
       case "auth/email-already-in-use":
